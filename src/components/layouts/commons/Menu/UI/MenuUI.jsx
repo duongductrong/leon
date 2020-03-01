@@ -106,6 +106,7 @@ class MenuUI extends React.Component {
     render() {
         const { children } = this.props;
         const { isSearch, isShow, menu, loading } = this.state;
+        console.log(loading)
         return (
             <div className="menu-ui">
                 <div className="menu-ui__container">
@@ -117,17 +118,19 @@ class MenuUI extends React.Component {
                         </div>
                         {
                             <div style={{display: isShow ? "initial" : "none"}} className={`menu-ui__container__category`}>
-                                <ul className="menu-ui__container__category__box">
-                                    {
-                                        loading ? <Spin /> : menu && menu.map((item, i) => (
-                                            <ItemMenuUI key={item._id} label={item.label} url={item.url}>
-                                                {
-                                                    item.submenu.length > 0 && <SubMenuUI submenu={item.submenu} />
-                                                }
-                                            </ItemMenuUI>
-                                        ))
-                                    }
-                                </ul>
+                                {
+                                    loading ? <Spin /> : <ul className="menu-ui__container__category__box">
+                                        {
+                                            menu && menu.map((item, i) => (
+                                                <ItemMenuUI key={item._id} label={item.label} url={item.url}>
+                                                    {
+                                                        item.submenu.length > 0 && <SubMenuUI submenu={item.submenu} />
+                                                    }
+                                                </ItemMenuUI>
+                                            ))
+                                        }
+                                    </ul>
+                                }
                             </div>
                         }
                         <div className="menu-ui__container__community">
