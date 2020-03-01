@@ -1,0 +1,45 @@
+.read-blog-page {
+    max-width: 86%;
+    margin: 0 auto;
+    &__wrapper {
+        &__content {
+            margin-top: 40px;
+            margin-bottom: 40px;
+        }
+        &__tags {
+            &__child {
+                color: $secondary-blur1;
+                text-decoration: none;
+            }
+            margin-bottom: 40px;
+        }
+    }
+}
+
+@include Laptop {
+    .read-blog-page {
+        &__wrapper {
+            &__content {
+                img {
+                    width: 100%!important;
+                    object-fit: contain;
+                    // height: auto!important;
+                }
+            }
+        }
+    }
+}
+
+@include Tablet {
+    .read-blog-page {
+        &__wrapper {
+            &__content {
+                img {
+                    width: 100%!important;
+                    object-fit: contain;
+                    height: auto!important;
+                }
+            }
+        }
+    }
+}

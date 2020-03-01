@@ -1,0 +1,41 @@
+.progress {
+    &__title {
+        font-size: 13px;
+        font-weight: 400;
+        text-transform: uppercase;
+        margin-bottom: 5px;
+    }
+    &__process {
+        position: relative;
+        padding: 3px;
+        width: 0;
+        background: $secondary-blur2;
+        transition: width 500ms linear;
+        // animation: FadeInProgress 500ms linear;
+        &__ratio {
+            width: 30px;
+            height: 30px;
+            right: 0;
+            position: absolute;
+            background: $dark;
+            border-radius: 50%;
+            border: 3px solid white;
+            transform: translateY(-18px);
+            color: white;
+            font-size: 10px;
+            // @include BSBorderBox;
+            @include DflexCustom(center, center);
+        }
+    }
+}
+
+// @keyframes FadeInProgress {
+//     from {
+//         opacity: 0;
+//         width: 0;
+//     }
+//     to {
+//         opacity: 1;
+//         width: 100%;
+//     }
+// }

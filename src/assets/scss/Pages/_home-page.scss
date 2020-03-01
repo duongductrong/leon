@@ -1,0 +1,21 @@
+.home-page {
+    margin-top: 60px;
+    &__container {
+        &__figure-boxes {
+            margin-top: 40px;
+            @include Dgrid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: 15px;
+            height: 200px;
+        }
+        &__blog-simple {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        &__see-mores {
+            margin-top: 50px;
+            text-transform: uppercase;
+            text-align: center;
+        }
+    }
+}

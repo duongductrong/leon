@@ -1,0 +1,72 @@
+@import "./fonts";
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+JP:300,400,500,700,900&display=swap'); //Noto Sans JP
+
+//re-config ant design
+body {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    line-height: initial;
+    font-size: 13px;
+    color: #000;
+    // font-family: Poppins, Lato;
+    font-family: Noto Sans JP;
+    scroll-behavior: smooth;
+}
+
+h1, 
+h2, 
+h3, 
+h4, 
+h5, 
+h6,
+button,
+p { 
+    // font-family: "Poppins";
+    font-family: Noto Sans JP;
+    margin: inherit; 
+    font-weight: initial;
+    color: initial;
+};
+
+h1, 
+h2, 
+h3, 
+h4, 
+h5, 
+h6, div,input, button {
+    -webkit-box-sizing: initial;
+    box-sizing: initial;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 15px auto;
+    font-weight: bold;
+}
+
+a {
+    color: #000;
+}
+a.wysiwyg-mention {
+    color: #1890ff;
+}
+// a:visited,
+a:focus {
+    color: #000;
+}
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+ol, ul, dl {
+    margin: initial;
+}
+
+//Selection mouse
+::selection {
+    text-shadow: none;
+    color: #000;
+    background: #FFF9CD;
+}

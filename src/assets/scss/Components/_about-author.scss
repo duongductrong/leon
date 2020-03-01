@@ -1,0 +1,23 @@
+.about-author {
+    border: 1px solid $secondary-blur1;
+    padding: 20px;
+    @include DflexCustom(space-between, center);    
+    &__image {
+        display: block;
+        min-width: 100px!important;
+        height: 100px!important;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+    &__content {
+        display: block;
+        margin-left: 20px;
+        &__name {
+            font-size: 14px;
+        }
+        &__description {
+            margin-left: 0;
+            font-size: 13px;
+        }
+    }
+}

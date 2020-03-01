@@ -1,0 +1,35 @@
+.testimonial {
+    position: relative;
+    text-align: center;
+    border: 1px solid $secondary-blur2;
+    border-radius: 5px;
+    padding: 0 25px 25px 25px;
+    margin-top: 50px;
+    box-shadow: 
+        2px 2px 0 white,
+        4px 4px 0 0 $secondary-blur2,
+        2px 2px 4px white
+    ;
+    &__image {
+        position: absolute;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        width: 70px;
+        height: 70px;
+        margin: 0 auto;
+    }
+    &__name {
+        margin: 40px;
+        margin-bottom: 0;
+        font-size: 14px;
+    }
+    &__location {
+        color: $secondary-blur1;
+        font-weight: bold;
+    }
+    &__description {
+        text-align: left;
+        font-size: 12px;
+        margin-top: 10px;
+    }
+}

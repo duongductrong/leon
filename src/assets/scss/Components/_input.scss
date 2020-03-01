@@ -1,0 +1,11 @@
+.input {
+    @include BSBorderBox;
+    outline: 0;
+    border: 1px solid $secondary-blur2;
+    padding: 10px;
+    width: 100%;
+    transition: .5s;
+    &:focus {
+        box-shadow: 2px 2px 0 $dark;
+    }
+}

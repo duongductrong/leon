@@ -1,0 +1,17 @@
+blockquote {
+    position: relative;
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+    padding: 10px 10px 30px 10px;
+    margin: 10px 0;
+    color: $secondary-blur1;
+    border-left: 5px solid $secondary-blur1;
+    &::before {
+        content: "Hey, bro! - Do it right now.";
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        color: $dark;
+        border-right: 2px solid $dark;
+    }
+}

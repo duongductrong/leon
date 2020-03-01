@@ -1,0 +1,15 @@
+.relation-posts {
+    &__wrapper {
+        @include Dgrid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 30px;
+    }
+}
+
+@include MobileL {
+    .relation-posts {
+        &__wrapper {
+            grid-template-columns: 1fr;
+        }
+    }
+}

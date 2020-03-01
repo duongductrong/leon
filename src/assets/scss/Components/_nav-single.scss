@@ -1,0 +1,36 @@
+.nav-single {
+    &__direction {
+        margin-top: 40px;
+        @include DflexCustom(space-between, center);
+        & > div > &__content {
+            @include DflexCustom(center, center);
+        }
+        &__left {
+            &__content {
+                & h2 {
+                    margin-left: 5px;
+                    font-size: 15px;
+                    text-transform: uppercase;
+                }
+            }
+        }
+        &__right {
+            &__content {
+                & h2 {
+                    margin-right: 5px;
+                    font-size: 15px;
+                    text-transform: uppercase;
+                }
+            }
+        }
+        & h2 {
+            display: inline-block;
+            color: $dark;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        & a {
+            text-decoration: none;
+        }
+    }
+}

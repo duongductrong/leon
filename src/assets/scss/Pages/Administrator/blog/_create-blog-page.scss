@@ -1,0 +1,42 @@
+.create-blog-page {
+    // padding: ;
+    height: 100%;
+    overflow: auto;
+    &__grid {
+        @include Dgrid;
+        grid-template-columns: 5fr 1fr;
+        grid-gap: 20px;
+        &__main {
+            background: $light;
+            padding: 10px;
+        }
+        &__side {
+        }
+    }
+    &__form {
+        &__editor {
+            // height: 400px;
+            // display: block;
+            line-height: 2;
+            overflow: auto;
+            padding: 10px;
+            border: 1px solid $secondary-blur2;
+            & div.rdw-option-wrapper {
+                box-sizing: initial;
+                -moz-box-sizing: initial;
+                -webkit-box-sizing: initial;
+            }
+        }
+        &__demo-editor {
+            height: 450px!important;
+        }
+    }
+    &--box {
+        background: $light;
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+    &--btn {
+        margin-bottom: initial;
+    }
+}

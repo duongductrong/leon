@@ -1,0 +1,23 @@
+.grid-layout-73 {
+    @include Dgrid;
+    grid-template-columns: 5fr 2fr;
+    grid-gap: 30px;
+    // &__posts {
+    //     &__pagination {
+    //         margin-top: 30px;
+    //         text-align: center;
+    //     }
+    // }
+}
+
+@include Laptop {
+    .grid-layout-73 {
+        width: 100%;
+    }
+}
+
+@media (max-width: 767px) {
+    .grid-layout-73 {
+        grid-template-columns: 1fr;
+    }
+}

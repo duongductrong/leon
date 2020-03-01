@@ -1,0 +1,37 @@
+.footer {
+    margin-top: 80px;
+    padding: 60px 0;
+    border-top: 1px solid $secondary-blur4;
+    text-align: center;
+    &__brand {
+        max-width: 300px;
+        margin: 0 auto;
+        &__logo {
+            width: 100%;
+        }
+        &__title {
+            color: $secondary-blur2;
+            font-size: 12px;
+            text-transform: uppercase;
+        }
+    }
+    &__community {
+        @include DflexCustom(center, center);
+        & > a > div {
+            @include DflexCustom(center, center);
+            margin: 0 3px;
+            color: $secondary-blur1;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            &:hover {
+                background: $dark;
+                color: $light;
+            }
+        }
+        & > a.footer__community__facebook > div:hover { background: $facebook; }
+        & > a.footer__community__twitter > div:hover { background: $twitter; }
+        & > a.footer__community__linkedin > div:hover { background: $linkedin; }
+        & > a.footer__community__ins > div:hover { background: $ins; }
+    }
+}

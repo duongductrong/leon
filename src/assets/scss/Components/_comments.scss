@@ -1,0 +1,29 @@
+.comments {
+    &__group {
+
+    }
+    &__multiple-group {
+        
+    }
+
+    &--grid3 {
+        @include Dgrid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 15px;
+    }
+}
+
+@include MobileL {
+    .comments {
+        &__group {
+    
+        }
+        &__multiple-group {
+            
+        }
+    
+        &--grid3 {
+            grid-template-columns: 1fr;
+        }
+    }
+}

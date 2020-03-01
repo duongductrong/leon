@@ -1,0 +1,17 @@
+.switch-wrapper {
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 30px;
+    & > div:first-child {
+        position: absolute;
+        display: none;
+        transition: 100ms linear;
+        overflow: hidden;
+    }
+    & > div:last-child {
+        position: relative;
+        display: block;
+        transition: 100ms linear;
+        overflow: initial;
+    }
+}  

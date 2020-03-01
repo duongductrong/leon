@@ -1,0 +1,72 @@
+.card-simple {
+    border-bottom: 1px solid $secondary-blur4;
+    & > a {
+        text-decoration: none;
+        @include DflexCustom(initial, center);
+    }
+    &__left {
+        @include DflexCustom(center, center);
+        text-align: center;
+        width: 100px;
+        height: 100px;
+        &__created {
+            font-size: 34px;
+            font-weight: bold;
+            &__month {
+                display: block;
+                font-size: 10px;
+                font-weight: 500;
+                color: $secondary-blur1;
+            }
+        }
+        &__image {
+            display: none;
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            animation: effectOpacity .5s;
+        }
+    }
+    &__main {
+        margin-left: 50px;
+        &__title {
+            font-weight: 600;
+            font-size: 24px;
+            text-transform: capitalize;
+        }
+    }
+
+    &:hover  &__left &__left__image {
+        display: block;
+        position: absolute;
+    }
+}
+
+@keyframes effectOpacity {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@include Tablet {
+    .card-simple {
+        &__main {
+            &__title {
+                font-size: 20px;
+            }
+        }
+    }
+}
+
+@include MobileM {
+    .card-simple {
+        &__main {
+            &__title {
+                font-size: 15px;
+            }
+        }
+    }
+}

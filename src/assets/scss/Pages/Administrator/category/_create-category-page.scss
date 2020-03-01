@@ -1,0 +1,15 @@
+.create-category-page {
+    background: $light;
+    padding: 10px;
+    height: 100%;
+    overflow: auto;
+    &__title {
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 30px;
+    }
+    &__form {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+}

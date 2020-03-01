@@ -1,0 +1,187 @@
+.menu-ui {
+    @include BSBorderBox;
+    min-height: 54px;
+    &__layout {
+        @include DflexCustom(space-between, center);
+    }
+
+    &__container {
+        position: fixed;
+        width: 100%;
+        height: auto;
+        z-index: 10;
+        border-bottom: 1px solid $secondary-blur2;
+        background: rgba($color: #fff, $alpha: 0.96);
+        &__logo {
+            max-width: 200px;
+            &__image {
+                transform: translate(0, 15px);
+                width: 100%;
+            }
+        }
+    
+        &__category {
+            &__box {
+                list-style-type: none;
+                padding-left: 0;
+                &__item {
+                    position: relative;
+                    display: inline-block;
+                    &__child {
+                        color: $dark;
+                        text-transform: uppercase;
+                        text-decoration: none;
+                        padding: 18px 10px;
+                        transition: color .5s;
+                    }
+                    &__submenu {
+                        @include PosAbsolute(35px,auto,auto,0);
+                        width: 180px;
+                        background: $secondary-blur3;
+                        visibility: hidden;
+                        &__child {
+                            display: block;
+                            text-transform: uppercase;
+                            font-size: 12px;
+                            padding: 10px 15px;
+                            text-decoration: none;
+                            transition: color .5s;
+                            color: $dark;
+                            &:hover {
+                                color: $secondary-blur1;
+                            }
+                        }
+                    }
+                    &:hover > &__child {
+                        color: $secondary-blur1;
+                    }
+                    &:hover > &__submenu {
+                        visibility: visible;
+                    }
+                }
+            }
+        }
+    
+        &__community {
+            &__child {
+                text-decoration: none;
+                color: $secondary-blur2;
+                padding: 5px;
+                cursor: pointer;
+            }
+            &__bars {
+                visibility: hidden;
+                font-size: 20px;
+                transform: translateY(2px);
+            }
+        }
+    }
+    &__searching {
+        @include DflexCustom(center, center);
+        @include BSBorderBox;
+        @include bgDarkOpacity(0.95);
+        flex-direction: column;
+        height: 100vh;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        text-align: center;
+        z-index: 9;
+        animation: menuUIEffect .5s;
+        &__title {
+            color: $dark;
+            display: block;
+            font-size: 10px;
+            font-weight: 400;
+            letter-spacing: 2px;
+        }
+        &__content {
+            text-align: center;
+            border: 0;
+            outline: 0;
+            padding: 10px;
+            font-size: 40px;
+            font-weight: bold;
+            &::placeholder {
+                color: rgba($color: #000000, $alpha: 0.1);
+            }
+        }
+    }
+
+    &--dark {
+        margin-left: 20px;
+        color: $dark;
+        font-size: 15px;
+    }
+    &--hidden {
+        display: none;
+    }
+}
+
+@include Laptop {
+    .menu-ui {    
+        &__container {
+            &__category {
+                background: rgba(255, 255, 255, 0.96);
+                display: none;
+                @include BSBorderBox;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                text-align: center;
+                width: 100%;
+                padding: 5px;
+                &__box {
+                    &__item {
+                        display: block;
+                        margin: 10px 0;
+                        &__child {
+                            font-size: 20px;
+                            padding: inherit;
+                        }
+                        &__submenu {
+                            position: initial;
+                            margin: auto;
+                            background: initial;
+                            display: none;
+                            &__child {
+                            }
+                        }
+                        &:hover > &__submenu {
+                            display: block;
+                        }
+                    }
+                }
+            }
+            &__community {
+                &__bars {
+                    visibility: visible;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+
+@include MobileM {
+    .menu-ui__container {
+        top: 0;
+        padding: 10px 0;
+        &__logo {
+            max-width: 150px;
+        }
+        &__category__box__item__child {
+            font-size: 15px;
+        }
+    }
+}
+
+@keyframes menuUIEffect {
+    from {
+        top: -100%;
+    }
+    to {
+        top: 0%;
+    }
+}

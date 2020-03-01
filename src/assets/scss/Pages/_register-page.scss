@@ -1,0 +1,14 @@
+.register-page {
+    width: 300px;
+    max-width: 400px;
+    margin: 30px auto;
+    &__title {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+    &__form {
+        &__group {
+            margin-bottom: 30px;
+        }
+    }
+}

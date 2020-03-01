@@ -1,0 +1,17 @@
+.button {
+    padding: 10px 20px;
+    border: 2px solid $dark;
+    background: transparent;
+    cursor: pointer;
+    outline: 0;
+    transition: .5s;
+    &:hover {
+        color: $light;
+        background: $dark;
+    }
+
+    &--link {
+        text-decoration: none;
+        color: $dark;
+    }
+}

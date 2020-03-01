@@ -1,0 +1,44 @@
+.carousel {
+    position: relative;
+    height: 500px;
+    // width: 75%;
+    margin: auto;
+    &__posts {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        &__child {
+            animation: carouselEffect 1s;
+        }
+    }
+    &__control {
+        & > div {
+            @include DflexCustom(center, center);
+            width: 30px;
+            height: 30px;
+            border: 2px solid $dark;
+            cursor: pointer;
+            background: $light;
+            position: absolute;
+        }
+        &__prev {
+            top: 50%;
+            left: -1%;
+        }
+        &__next {
+            top: 50%;
+            right: -1%;
+        }
+    }
+}
+
+@keyframes carouselEffect {
+    from {
+        opacity: 0.5;
+        transform: scale(1.5) skewX(10deg);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}

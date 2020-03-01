@@ -1,0 +1,22 @@
+.fetch-category-page {
+    // height: 100vh;
+    background: $light;
+    &__title {
+        text-align: center;
+        padding-top: 20px;
+        &__child {
+            text-transform: uppercase;
+            margin: 0;
+            font-size: 30px;
+        }
+    }
+    &__new {
+        // margin-top: 10px;
+        // margin-left: 5px;
+        text-align: center;
+    }
+    &__table {
+        background: $light;
+        padding: 10px;
+    }
+}

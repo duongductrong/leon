@@ -1,0 +1,19 @@
+.share-this-post {
+    @include DflexCustom(space-between, center);
+    padding: 10px 15px;
+    border: 2px solid $dark;
+    &__title {
+        margin: 0;
+        font-size: 13px;
+        letter-spacing: 2px;
+        font-weight: 400;
+    }
+    &__community {
+        display: flex;
+        & a div {
+            width: 30px;
+            height: 30px;
+            @include DflexCustom(center, center);
+        }
+    }
+}

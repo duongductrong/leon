@@ -1,0 +1,14 @@
+.create-user-page {
+    background: $light;
+    height: 100%;
+    overflow: auto;
+    &__wrapper {
+        padding: 10px;
+        border-radius: 5px;
+        max-width: 600px;
+        margin: 0 auto;
+        &__title {
+            text-align: center;
+        }
+    }
+}
