@@ -46,7 +46,6 @@ class LoginPage extends React.Component {
     }
 
     checkLogin = () => {
-        console.log(localStorage.getItem("access_token"))
         if(localStorage.getItem("access_token")) {
             checkLoginAPI()
             .then(data => {

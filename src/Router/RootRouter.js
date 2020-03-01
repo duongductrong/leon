@@ -78,28 +78,28 @@ class BlogRouter extends React.Component {
         return (
             // <Router>
                 <AnimatedSwitch className="switch-wrapper" {...animation} mapStyles={mapStyles}>
-                    <Route path="/" exact component={HomePage} />
-                    <Route path="/blog" exact component={BlogPage} />
-                    <Route path="/blog/:id" exact component={ReadBlogPage} />
-                    <Route path="/category/:id" exact component={CategoryPage} />
-                    <Route path="/login" exact component={LoginPage} />
-                    <Route path="/register" exact component={RegisterPage} />
-                    <Route path="/resume" exact component={ResumePage} />
-                    <PrivateRoute path="/administrator" exact component={OverviewPage} />
-                    <PrivateRoute path="/administrator/category" exact component={FetchCategoryPage} />
-                    <PrivateRoute path="/administrator/category/new" exact component={CreateCategoryPage} />
-                    <PrivateRoute path="/administrator/category/edit/:id" exact component={EditCategoryPage} />
-                    <PrivateRoute path="/administrator/category/restore" exact component={RestoreCategoriesPage} />
-                    <PrivateRoute path="/administrator/blog" exact component={FetchBlogPage} />
-                    <PrivateRoute path="/administrator/blog/new" exact component={CreateBlogPage} />
-                    <PrivateRoute path="/administrator/blog/edit/:id" exact component={EditBlogPage} />
-                    <PrivateRoute path="/administrator/blog/restore" exact component={RestoreBlogPage} />
-                    <PrivateRoute path="/administrator/user/" exact component={FetchUserPage} />
-                    <PrivateRoute path="/administrator/user/new" exact component={CreateUserPage} />
-                    <PrivateRoute path="/administrator/user/edit/:id" exact component={EditUserPage} />
-                    <PrivateRoute path="/administrator/user/restore" exact component={RestoreUserPage} />
-                    <PrivateRoute path="/administrator/system/menu" exact component={MenuSystem} />
-                    <Route path="*" component={Error404} />
+                    <Route path={`/`} exact component={HomePage} />
+                    <Route path={`/blog`} exact component={BlogPage} />
+                    <Route path={`/blog/:id`} exact component={ReadBlogPage} />
+                    <Route path={`/category/:id`} exact component={CategoryPage} />
+                    <Route path={`/login`} exact component={LoginPage} />
+                    <Route path={`/register`} exact component={RegisterPage} />
+                    <Route path={`/resume`} exact component={ResumePage} />
+                    <PrivateRoute path={`/administrator`} exact component={OverviewPage} />
+                    <PrivateRoute path={`/administrator/category`} exact component={FetchCategoryPage} />
+                    <PrivateRoute path={`/administrator/category/new`} exact component={CreateCategoryPage} />
+                    <PrivateRoute path={`/administrator/category/edit/:id`} exact component={EditCategoryPage} />
+                    <PrivateRoute path={`/administrator/category/restore`} exact component={RestoreCategoriesPage} />
+                    <PrivateRoute path={`/administrator/blog`} exact component={FetchBlogPage} />
+                    <PrivateRoute path={`/administrator/blog/new`} exact component={CreateBlogPage} />
+                    <PrivateRoute path={`/administrator/blog/edit/:id`} exact component={EditBlogPage} />
+                    <PrivateRoute path={`/administrator/blog/restore`} exact component={RestoreBlogPage} />
+                    <PrivateRoute path={`/administrator/user/`} exact component={FetchUserPage} />
+                    <PrivateRoute path={`/administrator/user/new`} exact component={CreateUserPage} />
+                    <PrivateRoute path={`/administrator/user/edit/:id`} exact component={EditUserPage} />
+                    <PrivateRoute path={`/administrator/user/restore`} exact component={RestoreUserPage} />
+                    <PrivateRoute path={`/administrator/system/menu`} exact component={MenuSystem} />
+                    <Route path={`*`} component={Error404} />
                 </AnimatedSwitch>
             // </Router>
         )
