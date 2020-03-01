@@ -96,6 +96,10 @@ class LoginPage extends React.Component {
         this.checkLogin();
     }
 
+    componentDidMount() {
+        document.title = "Login - Leon"
+    }
+
     render() {
         const { username, password, isAuth, loading } = this.state;
         return (

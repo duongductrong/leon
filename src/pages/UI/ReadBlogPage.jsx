@@ -65,7 +65,7 @@ class ReadBlogPage extends React.Component {
                         loading: false
                     }, () => {
                         //Inner paragraph of blog to HTML
-                        document.title = this.state.blog.title + " - Hey, Bro!";
+                        document.title = this.state.blog.title + " - Leon !";
                     })
                 }
                 else {

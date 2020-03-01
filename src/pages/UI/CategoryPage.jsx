@@ -83,6 +83,10 @@ class CategoryPage extends React.Component {
         this.getBlogsOfCategory()
     }
 
+    componentDidMount() {
+        document.title = `${this.props.match.params.id} category - Leon`
+    }
+
     render() {
         const { blogs, pagination, loading } = this.state;
         return (

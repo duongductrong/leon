@@ -82,7 +82,7 @@ class BlogPage extends React.Component {
     }
 
     componentDidMount() {
-        document.title = "My blog"
+        document.title = "Blog posts - Leon"
     }
 
     render() {

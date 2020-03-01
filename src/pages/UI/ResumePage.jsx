@@ -34,7 +34,7 @@ class ResumePage extends React.Component {
     }
 
     componentDidMount() {
-        document.title = "Resume"
+        document.title = "Resume - Leon"
     }
     
     render() {

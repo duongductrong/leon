@@ -12,6 +12,10 @@ class Error404 extends React.Component {
         this.onLoadedToTop();
     }
 
+    componentDidMount() {
+        document.title = "ERROR 404 - Lỗi không tìm thấy - Leon"
+    }
+
     render() {
         return (
             <div className="error-404">

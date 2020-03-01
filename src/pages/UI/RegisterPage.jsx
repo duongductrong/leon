@@ -62,7 +62,7 @@ class RegisterPage extends React.Component {
     }
 
     componentDidMount() {
-        document.title = "Register - Hey, Bro!"
+        document.title = "Register - Leon !"
     }
     
     render() {

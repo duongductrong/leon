@@ -73,7 +73,7 @@ class HomePage extends React.Component {
         this.onToTopAfterLoaded();
         this.getBlog();
 
-        document.title = "Homepage";
+        document.title = "Homepage - Leon";
     }
 
     render() {
