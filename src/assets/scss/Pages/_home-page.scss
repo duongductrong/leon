@@ -19,3 +19,20 @@
         }
     }
 }
+
+@include MobileL {
+    .home-page {
+        margin-top: 60px;
+        &__container {
+            &__figure-boxes {
+                margin-top: 40px;
+                @include Dgrid;
+                grid-template-columns: repeat(2, 1fr);
+            }
+            &__blog-simple {
+            }
+            &__see-mores {
+            }
+        }
+    }
+}

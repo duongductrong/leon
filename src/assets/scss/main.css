@@ -1604,6 +1604,20 @@ pre {
   text-align: center;
 }
 
+@media (max-width: 425px) {
+  .home-page {
+    margin-top: 60px;
+  }
+  .home-page__container__figure-boxes {
+    margin-top: 40px;
+    display: grid;
+    display: -moz-grid;
+    display: -ms-grid;
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 .blog-page {
   width: 86%;
   margin: 0 auto;

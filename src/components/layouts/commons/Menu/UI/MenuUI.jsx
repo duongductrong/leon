@@ -12,6 +12,7 @@ import Searching from './Searching'
 
 //assets
 import Logo from '../../../../../assets/images/impose-logo.png'
+import { message, Spin } from 'antd';
 
 const fetchMenu = () => {
     return new Promise((resolve, reject) => {
@@ -48,9 +49,12 @@ class MenuUI extends React.Component {
                         menu
                     })
                 }
+                else {
+                    this.setState({loading: false}, () => message.error(`${status} ${code}: ${msgVi}`));
+                }
             })
             .catch(err => {
-
+                this.setState({loading: false}, () => message.error(err));
             })
         })
     }
@@ -101,7 +105,7 @@ class MenuUI extends React.Component {
 
     render() {
         const { children } = this.props;
-        const { isSearch, isShow, menu } = this.state;
+        const { isSearch, isShow, menu, loading } = this.state;
         return (
             <div className="menu-ui">
                 <div className="menu-ui__container">
@@ -115,7 +119,7 @@ class MenuUI extends React.Component {
                             <div style={{display: isShow ? "initial" : "none"}} className={`menu-ui__container__category`}>
                                 <ul className="menu-ui__container__category__box">
                                     {
-                                        menu && menu.map((item, i) => (
+                                        loading ? <Spin /> : menu && menu.map((item, i) => (
                                             <ItemMenuUI key={item._id} label={item.label} url={item.url}>
                                                 {
                                                     item.submenu.length > 0 && <SubMenuUI submenu={item.submenu} />
