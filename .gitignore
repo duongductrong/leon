@@ -24,3 +24,9 @@ yarn-error.log*
 
 # folder #Unused
 /redux
+
+# firebase
+.firebaserc
+firebase.json
+/dist
+/.firebase

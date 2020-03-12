@@ -8,7 +8,7 @@ import CardSimple from '../../components/UI/Card/CardSimple';
 import Button from '../../components/UI/Button/Button'
 import Axios from 'axios';
 import Module from '../../modules/Module';
-import { message, Skeleton, Result } from 'antd';
+import { message, Skeleton, Result, Modal } from 'antd';
 //assets
 import Avatar from '../../assets/images/about-me-3-550x550.jpg';
 import Avt from '../../assets/images/avt.jpg';
@@ -72,12 +72,11 @@ class HomePage extends React.Component {
     componentDidMount() {
         this.onToTopAfterLoaded();
         this.getBlog();
-
         document.title = "Homepage - Leon";
     }
 
     render() {
-        const { blogs, loading} = this.state;
+        const { blogs, loading } = this.state;
         return (
             // <UserInterface>
                 <LayoutMedium className="home-page">

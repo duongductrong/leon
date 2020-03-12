@@ -94,12 +94,19 @@ class LibraryImages extends React.Component {
     onUploaded = (progress) => {
         const { file } = progress;
         //file have three status: uploading, done, error
+        
         if(file.status === "done") {
-            message.success("Success upload");
-            this.getImage();
+            const { response } = file;
+            if(response.status === "error") {
+                message.error(response.msgVi)
+            }
+            else if(response.status === "ok") {
+                this.getImage();
+                message.success(response.msgVi);
+            }
         }
         else if(file.status === "error") {
-            message.error("error upload");
+            message.error(file.error.message);
         }
     }
 

@@ -47,37 +47,44 @@
     src:local('Noto Sans Bold'),local('NotoSans-Bold'),url(http://fonts.gstatic.com/s/notosans/v9/o-0NIpQlx3QUlC5A4PNjXhFVZNyH.woff) format('woff')
 }
 @font-face{
-    font-family:'Poppins';
+    font-family:'Noto Sans';
     font-display:block;
     font-style:normal;
-    font-weight:300;
-    src:local('Poppins Light'),local('Poppins-Light'),url(http://fonts.gstatic.com/s/poppins/v9/pxiByp8kv8JHgFVrLDz8Z1xlEw.woff) format('woff')
+    font-weight: 900;
+    src:local('Noto Sans Bold'),local('NotoSans-Bold'),url(http://fonts.gstatic.com/s/notosans/v9/o-0NIpQlx3QUlC5A4PNjXhFVZNyH.woff) format('woff')
 }
-@font-face{
-    font-family:'Poppins';
-    font-display:block;
-    font-style:normal;
-    font-weight:400;
-    src:local('Poppins Regular'),local('Poppins-Regular'),url(http://fonts.gstatic.com/s/poppins/v9/pxiEyp8kv8JHgFVrJJfedA.woff) format('woff')
-}
-@font-face{
-    font-family:'Poppins';
-    font-display:block;
-    font-style:normal;
-    font-weight:500;
-    src:local('Poppins Medium'),local('Poppins-Medium'),url(http://fonts.gstatic.com/s/poppins/v9/pxiByp8kv8JHgFVrLGT9Z1xlEw.woff) format('woff')
-}
-@font-face{
-    font-family:'Poppins';
-    font-display:block;
-    font-style:normal;
-    font-weight:600;
-    src:local('Poppins SemiBold'),local('Poppins-SemiBold'),url(http://fonts.gstatic.com/s/poppins/v9/pxiByp8kv8JHgFVrLEj6Z1xlEw.woff) format('woff')
-}
-@font-face{
-    font-family:'Poppins';
-    font-display:block;
-    font-style:normal;
-    font-weight:700;
-    src:local('Poppins Bold'),local('Poppins-Bold'),url(http://fonts.gstatic.com/s/poppins/v9/pxiByp8kv8JHgFVrLCz7Z1xlEw.woff) format('woff')
-}
+// @font-face{
+//     font-family:'Poppins';
+//     font-display:block;
+//     font-style:normal;
+//     font-weight:300;
+//     src:local('Poppins Light'),local('Poppins-Light'),url(http://fonts.gstatic.com/s/poppins/v9/pxiByp8kv8JHgFVrLDz8Z1xlEw.woff) format('woff')
+// }
+// @font-face{
+//     font-family:'Poppins';
+//     font-display:block;
+//     font-style:normal;
+//     font-weight:400;
+//     src:local('Poppins Regular'),local('Poppins-Regular'),url(http://fonts.gstatic.com/s/poppins/v9/pxiEyp8kv8JHgFVrJJfedA.woff) format('woff')
+// }
+// @font-face{
+//     font-family:'Poppins';
+//     font-display:block;
+//     font-style:normal;
+//     font-weight:500;
+//     src:local('Poppins Medium'),local('Poppins-Medium'),url(http://fonts.gstatic.com/s/poppins/v9/pxiByp8kv8JHgFVrLGT9Z1xlEw.woff) format('woff')
+// }
+// @font-face{
+//     font-family:'Poppins';
+//     font-display:block;
+//     font-style:normal;
+//     font-weight:600;
+//     src:local('Poppins SemiBold'),local('Poppins-SemiBold'),url(http://fonts.gstatic.com/s/poppins/v9/pxiByp8kv8JHgFVrLEj6Z1xlEw.woff) format('woff')
+// }
+// @font-face{
+//     font-family:'Poppins';
+//     font-display:block;
+//     font-style:normal;
+//     font-weight:700;
+//     src:local('Poppins Bold'),local('Poppins-Bold'),url(http://fonts.gstatic.com/s/poppins/v9/pxiByp8kv8JHgFVrLCz7Z1xlEw.woff) format('woff')
+// }

@@ -1427,6 +1427,10 @@ ol, ul, dl {
   color: rgba(33, 41, 51, 0.35);
 }
 
+.timeline__item__using {
+  margin: 10px 0;
+}
+
 .timeline__item::before {
   content: "";
   border-radius: 50%;
@@ -1504,6 +1508,8 @@ ol, ul, dl {
   border-radius: 50%;
   width: 70px;
   height: 70px;
+  -o-object-fit: cover;
+     object-fit: cover;
   margin: 0 auto;
 }
 
@@ -1547,6 +1553,7 @@ pre {
   color: #c4a454;
   padding: 15px;
   border-left: 5px solid #ced6e0;
+  line-height: 2.5;
 }
 
 .skeleton-square {

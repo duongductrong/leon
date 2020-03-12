@@ -33,6 +33,7 @@ import { AnimatedSwitch, spring } from 'react-router-transition'
 import RestoreBlogPage from '../pages/Administrator/Blog/Restore/RestoreBlogPage';
 import RestoreCategoriesPage from '../pages/Administrator/Category/Restore/RestoreCategoriesPage';
 import RestoreUserPage from '../pages/Administrator/User/Restore/RestoreUserPage';
+import CountWordExtension from '../pages/UI/CountWordExtension';
 
 // we need to map the `scale` prop we define below
 // to the transform style property
@@ -85,6 +86,7 @@ class BlogRouter extends React.Component {
                     <Route path={`/login`} exact component={LoginPage} />
                     <Route path={`/register`} exact component={RegisterPage} />
                     <Route path={`/resume`} exact component={ResumePage} />
+                    <Route path={`/countword`} exact component={CountWordExtension} />
                     <PrivateRoute path={`/administrator`} exact component={OverviewPage} />
                     <PrivateRoute path={`/administrator/category`} exact component={FetchCategoryPage} />
                     <PrivateRoute path={`/administrator/category/new`} exact component={CreateCategoryPage} />

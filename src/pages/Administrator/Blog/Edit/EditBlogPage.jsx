@@ -87,7 +87,7 @@ class EditBlogPage extends React.Component {
     fetchBlog = (id) => {
         const { form } = this.props;
         this.setState({loadingPage: true}, () => {
-            getBlogAPI(id)
+            getBlogAPI(id, window.location.search)
             .then(res => {
                 const { data } = res;
                 //Response ok, not error

@@ -1,6 +1,6 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSearch, faMinus, faBars, faEnvelopeOpenText, faPhone, faSchool, faStickyNote } from '@fortawesome/free-solid-svg-icons'
+import { faSearch, faMinus, faBars, faEnvelopeOpenText, faPhone, faSchool, faStickyNote, faGenderless } from '@fortawesome/free-solid-svg-icons'
 import { faFacebookF, faTwitter, faInstagram, faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons'
 import LayoutMedium from '../../components/layouts/commons/LayoutMedium/LayoutMedium'
 import GridLayout73 from '../../components/layouts/commons/GridLayout/GridLayout73';
@@ -12,7 +12,62 @@ import Progress from '../../components/UI/Progress/Progress';
 import Testimonial from '../../components/UI/Testimonial/Testimonial';
 
 //assets
-import Avatar from '../../assets/images/avt.jpg'
+import Avatar from '../../assets/images/me.jpg';
+import Avt from '../../assets/images/mee.jpg'
+
+const TimelineData = [
+    {
+        title: "EDUCATION",
+        item: [
+            {
+                currently: true,
+                date: "2018 - 2021",
+                name: "Student of Ton Duc Thang University",
+                location: "TON DUC THANG UNIVERSITY . HCM City",
+                description: "Hiện tại mình là sinh viên trường TÔN ĐỨC THẮNG UNIVERSITY - HỆ CAO ĐẲNG. Tại khóa 2018 sẽ tốt nghiệp vào đầu năm 2021. Mình có học lực loại Khá, điểm tổng các môn hiện tại 8/10"
+            }
+        ]
+    },
+    {
+        title: "EXPERIENCE",
+        item: [
+            {
+                currently: false,
+                date: "NOV 2019 - DEC 2019",
+                name: "[Project] XSKILL STORE - SHOES STORE",
+                location: "https://reactjs-xskillstore.firebaseapp.com/",
+                description: "XSKILL-STORE - SHOES STORE là một trang web bán hàng với sản phẩm là giày. Trang có một số chức năng cơ bản như ĐĂNG NHẬP, ĐĂNG KÝ TÀI KHOẢN ,ĐẶT HÀNG, CHỌN LỌC MẶT HÀNG theo xem trước ảnh của sản phẩm, phân trang, viết blog giới thiệu sản phẩm. Trang web cũng có giao diện quản lý, thống kê bài viết, sản phẩm, đơn hàng, ngoài ra cũng có thể chỉnh sửa và xóa các đối tượng.",
+                using: (
+                    <ul>
+                        <li>Frontend: ReactJS</li>
+                        <li>Backend: Nodejs - Expressjs</li> 
+                        <li>Database: MongoDB atlas</li>
+                    </ul>
+                )
+            },
+            {
+                currently: true,
+                date: "FEB 2020",
+                name: "[Project] Leon Blog - Blog cá nhân",
+                location: `${window.location.origin}`,
+                description: (<div>
+                    Leon blog là trang web về chủ đề blog. Mục đích dùng để chia sẻ kiến thức mình học được lên trang, cũng như dịch các bài blog có kiến thức liên quan đến ngôn ngữ Javascript.
+                    Leon blog được mình xây dựng kèm theo trang giao diện quản lý sử dụng thư viện UI/Ant.design. <br /> <br />
+                    Sau khi làm sản phẩm này mình có học được một số kiến thức mới
+                    như sử dụng UI/ant.design để xây dựng UI/UX tốt hơn, quản lý Form/thông tin người dùng nhập vào và validate giá trị trước khi gửi yêu cầu lên SERVER API để giảm
+                    bớt lượng yêu cầu dư thừa, áp dụng thuật toán phân trang
+                </div>),
+                using: (
+                    <ul>
+                        <li>Frontend: ReactJS / SCSS-BEM</li>
+                        <li>Backend: Nodejs - Expressjs</li> 
+                        <li>Database: MongoDB atlas</li>
+                    </ul>
+                )
+            }
+        ]
+    }
+]
 
 export const SideResumeProgress = ({title, children}) => {
     return (
@@ -45,55 +100,52 @@ class ResumePage extends React.Component {
                     <GridLayout73 className="resume-page__wrapper">
                         <div>
                             <Timeline>
-                                <TimelineTitle>EDUCATION</TimelineTitle>
-                                <TimelineItem
-                                date="2018"
-                                name="High School Graduation"
-                                location="TAN HIEP - KIEN GIANG"
-                                description="I am currently a middle school student"/>
-                                <TimelineItem
-                                date="2018 - 2021"
-                                name="Student of Ton Duc Thang University"
-                                location="TON DUC THANG UNIVERSITY . HCM City"
-                                description="I am a student of Ton Duc Thang University - College. Specialized in Information Technology, specializing in website programming - Front end Developers"
-                                currently />
-                                <TimelineTitle>EXPERIENCE</TimelineTitle>
-                                <TimelineItem
-                                date="NOV 2019 - DEC 2019"
-                                name="[Project] XSKILL STORE - SHOES TORE"
-                                location="https://reactjs-xskillstore.firebaseapp.com/"
-                                description="I use Reactjs for Frontend, Nodejs Framework Expressjs for Backend, The data container is mongo atlas" />
-                                <TimelineItem
-                                date="FEB 2020"
-                                name="[Project] Hey, Bro! Blog"
-                                location={window.location.href}
-                                description="Frontend: React - UI/Admin: Ant.design - UI/Template: Self build, Backend: Nodejs - Expressjs, Database: Mongo atlas"
-                                currently />
+                                {
+                                    TimelineData.map((timelime, i) => (
+                                        <React.Fragment key={"timelime-" + i}>
+                                            <TimelineTitle> {timelime.title} </TimelineTitle>
+                                            {
+                                                timelime.item && timelime.item.map(({date, name, location, description, using, currently}, i) => (
+                                                    <TimelineItem
+                                                    date={date}
+                                                    name={name}
+                                                    location={location}
+                                                    description={description}
+                                                    using={using}
+                                                    currently={currently} />
+                                                ))
+                                            }
+                                        </React.Fragment>
+                                    ))
+                                }
                             </Timeline>
                                 <a href="https://www.linkedin.com/in/d%C6%B0%C6%A1ng-%C4%91%E1%BB%A9c-tr%E1%BB%8Dng-2098461a0" target="__blank"> <Button>MY LINKEDIN PROFILE</Button> </a>
                         </div>
                         <div>
                             <SideResumeProgress title="ABOUT ME">
                                 <Testimonial 
-                                image={Avatar}
+                                image={Avt}
                                 name="DUONG DUC TRONG"
                                 location="STUDENT">
-                                    <FontAwesomeIcon icon={faEnvelopeOpenText} /> Email : duongductrong06@gmail.com <br />
-                                    <FontAwesomeIcon icon={faPhone} /> Phone : 0946848122 <br />
-                                    <FontAwesomeIcon icon={faGithub} /> Github: <a href="https://github.com/trong06" target="__blank">https://github.com/trong06</a> <br/>
-                                    <FontAwesomeIcon icon={faSchool} /> SCHOOL : TON DUC THANG UNIVERSITY - COLLEGE <br />
-                                    <FontAwesomeIcon icon={faStickyNote} /> I am a student of Ton Duc Thang University - College. Specialized in Information Technology, specializing in website programming - Front end Developers <br />
+                                    <FontAwesomeIcon icon={faGenderless} /> <strong>Name</strong> : Dương Đức Trọng <br />
+                                    <FontAwesomeIcon icon={faGenderless} /> <strong>Gender</strong> : Nam <br />
+                                    <FontAwesomeIcon icon={faEnvelopeOpenText} /> <strong>Email</strong> : duongductrong06@gmail.com <br />
+                                    <FontAwesomeIcon icon={faPhone} /> <strong>Phone</strong> : 0946848122 <br />
+                                    <FontAwesomeIcon icon={faGithub} /> <strong>Github</strong>: <a href="https://github.com/duongductrong" target="__blank">https://github.com/duongductrong</a> <br/>
+                                    <FontAwesomeIcon icon={faSchool} /> <strong>SCHOOL</strong> : TON DUC THANG UNIVERSITY - COLLEGE <br />
+                                    <FontAwesomeIcon icon={faStickyNote} /> Xin tự giới thiệu, hiện tại mình là sinh viên trường TÔN ĐỨC THẮNG UNIVERSITY - HỆ CAO ĐẲNG. 
+                                    Mình học chuyên ngành về lập trình web, mong muốn của mình trở thành một FrontEnd Developer <br />
                                 </Testimonial>
                             </SideResumeProgress>
                             <SideResumeProgress title="FRONTEND DEVELOPER SKILLS">
                                 <Progress title="HTML5" progress={100} />
                                 <Progress title="CSS3" progress={90} />
-                                <Progress title="JAVASCRIPT" progress={80} />
+                                <Progress title="JAVASCRIPT" progress={70} />
                                 <Progress title="SASS" progress={60} />
                                 <Progress title="REACTJS" progress={70} />
                             </SideResumeProgress>
                             <SideResumeProgress title="BACKEND DEVELOPER SKILLS">
-                                <Progress title="NODEJS" progress={70} />
+                                <Progress title="NODEJS/EXPRESSJS" progress={70} />
                                 <Progress title="MONGODB" progress={80} />
                             </SideResumeProgress>
                             <SideResumeProgress title="DESIGN SKILLS">
@@ -103,16 +155,6 @@ class ResumePage extends React.Component {
                                 {/* <Progress title="READING" progress={40} />
                                 <Progress title="LISTENING" progress={40} /> */}
                             </SideResumeProgress>
-                            
-                            { //Demo -> Waiting server build Resume 
-                                /* <SideResumeProgress title="TESTIMONIALS">
-                                    <Testimonial 
-                                    image="http://themes.pixelwars.org/impose/wp-content/uploads/2015/11/testo-01.jpg"
-                                    name="Vincent Wood"
-                                    location="CEO / Gravity Inc."
-                                    description="He is a great and hardworking guy. I am so proud of i have him as my asistant. He helped me so much. Also i am so proud of i have him as my asistant. He helped me so much." />
-                                </SideResumeProgress> */
-                            }
                         </div>
                     </GridLayout73>
                 </div>

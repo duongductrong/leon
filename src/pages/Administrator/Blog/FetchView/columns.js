@@ -73,13 +73,6 @@ export const columns = [
                 url: url
             } */
             actions && actions.map((e,i) => {
-                // let props = {};
-                // if(e["onFunc"]) {
-                //     props = { ...props, onClick: e["onFunc"] }
-                // }
-                // if(e["href"]) {
-                //     props = { ...props, href: e["href"] }
-                // }
                 return (
                     <span key={i} style={{margin: "0 3px"}}>
                         {

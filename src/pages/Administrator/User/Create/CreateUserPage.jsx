@@ -61,6 +61,7 @@ class CreateUserPage extends React.Component {
                         }
                         else {
                             //response errors
+                            this.setState({loading: false});
                             const keyErrors = Object.keys(data["errors"]);
                             //loop keys error to show notification
                             keyErrors.map(err => {

@@ -68,11 +68,11 @@ export const getBlogsAPI = (disable, query) => {
     })
 }
 
-export const getBlogAPI = (id) => {
+export const getBlogAPI = (id, query = "") => {
     return new Promise((resolve, reject) => {
         return Axios({
             method: "GET",
-            url: `${process.env.REACT_APP_API_ENDPOINT}/api/blog/${id}`
+            url: `${process.env.REACT_APP_API_ENDPOINT}/api/blog/${id}${query}`
         })
         .then(res => resolve(res))
         .catch(err => reject(err))

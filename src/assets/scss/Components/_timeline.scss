@@ -30,6 +30,9 @@
             font-weight: bold;
             color: $secondary-blur1;
         }
+        &__using {
+            margin: 10px 0;
+        }
         &::before {
             content: "";
             border-radius: 50%;

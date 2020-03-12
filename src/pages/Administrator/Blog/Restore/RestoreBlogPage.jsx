@@ -23,38 +23,43 @@ export default class RestoreBlogPage extends React.Component {
         else {
             query += window.location.search;
         }
-        getBlogsAPI(true, query)
-        .then(data => {
-            let { status, msgVi, code, blogs, total, page } = data;
-            let pagination = {...this.state.pagination};
+        this.setState({loading: true}, () => {
+            getBlogsAPI(true, query)
+            .then(data => {
+                let { status, msgVi, code, blogs, total, page } = data;
+                let pagination = {...this.state.pagination};
 
-            if(status !== "error" && status === "ok") {
-                blogs = blogs.map(blog => {
-                    return {
-                        ...blog,
-                        status: "Đã bị xóa",
-                        actions: [
-                            {
-                                action: "restore", name: "Restore", onFunc: this.onRestoreBlog(blog._id)
-                            }
-                        ]
-                    }
-                })
+                if(status !== "error" && status === "ok") {
+                    blogs = blogs.map(blog => {
+                        return {
+                            ...blog,
+                            status: "Đã bị xóa hoặc dạng nháp",
+                            actions: [
+                                {
+                                    action: "edit", name: "Edit Draft", onFunc: () => {}, href: `/administrator/blog/edit/${blog.url}?disable=${true}`
+                                },
+                                {
+                                    action: "restore", name: "Restore", onFunc: this.onRestoreBlog(blog._id)
+                                }
+                            ]
+                        }
+                    })
 
-                pagination.total = total;
-                pagination.current = page;
+                    pagination.total = total;
+                    pagination.current = page;
 
-                this.setState({
-                    loading: false,
-                    data: blogs,
-                    pagination
-                }, Module.goTo(`page=${page}`, `page=${page}`, `?page=${page}`))
-            }
-            else {
-                this.setState({loading: false}, () => message.error(`${status} ${code}: ${msgVi}`))
-            }
+                    this.setState({
+                        loading: false,
+                        data: blogs,
+                        pagination
+                    }, Module.goTo(`page=${page}`, `page=${page}`, `?page=${page}`))
+                }
+                else {
+                    this.setState({loading: false}, () => message.error(`${status} ${code}: ${msgVi}`))
+                }
+            })
+            .catch(err => this.setState({loading: false}, () => message.error(err)));
         })
-        .catch(err => this.setState({loading: false}, () => message.error(err)));
     }
 
     onRestoreBlog = (id) => () => {

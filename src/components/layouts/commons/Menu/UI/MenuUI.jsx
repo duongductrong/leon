@@ -98,6 +98,9 @@ class MenuUI extends React.Component {
         else if(nextState.menu.length !== this.state.menu.length) {
             return true;
         }
+        else if(nextState.loading !== this.state.loading) {
+            return true;
+        }
         else {
             return false;
         }
@@ -106,7 +109,6 @@ class MenuUI extends React.Component {
     render() {
         const { children } = this.props;
         const { isSearch, isShow, menu, loading } = this.state;
-        console.log(loading)
         return (
             <div className="menu-ui">
                 <div className="menu-ui__container">
