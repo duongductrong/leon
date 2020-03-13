@@ -1,6 +1,9 @@
 import React from 'react';
-import { Layout, Menu, Icon, Input } from 'antd';
+import { Layout, Menu, Input } from 'antd';
 import { SiderMenu } from './constants';
+import {
+    AntDesignOutlined,
+} from '@ant-design/icons'
 
 //assets
 import Logo from '../../../../../assets/images/impose-logo.png';
@@ -103,11 +106,15 @@ class NavigationAdministrator extends React.Component {
                                                 title={
                                                     menuItem.url === null ?  //Not have url
                                                     <span onClick={menuItem["onFunc"]}>
-                                                        <Icon type={menuItem.icon} />
+                                                        {
+                                                            <> {menuItem.icon} </>
+                                                        }
                                                         <span>{menuItem.name}</span>
                                                     </span> : //Have url
                                                     <a style={{color: "inherit"}} href={menuItem.url}>
-                                                        <Icon type={menuItem.icon} />
+                                                        {
+                                                            <> {menuItem.icon} </>
+                                                        }
                                                         <span>{menuItem.name}</span>
                                                     </a>
                                                 }>
@@ -123,11 +130,15 @@ class NavigationAdministrator extends React.Component {
                                                      {
                                                         menuItem.url === null ?  //Not have url
                                                         <span onClick={menuItem["onFunc"]}>
-                                                            <Icon type={menuItem.icon} />
+                                                            {
+                                                                <> {menuItem.icon} </>
+                                                            }
                                                             <span>{menuItem.name}</span>
                                                         </span> : //Have url
                                                         <a style={{color: "inherit"}} href={menuItem.url}>
-                                                            <Icon type={menuItem.icon} />
+                                                            {
+                                                                <> {menuItem.icon} </>
+                                                            }
                                                             <span>{menuItem.name}</span>
                                                         </a>
                                                      }

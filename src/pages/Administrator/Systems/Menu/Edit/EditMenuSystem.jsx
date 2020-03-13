@@ -2,6 +2,7 @@ import React from 'react';
 import { Form, Input, Typography, Button, message, notification } from 'antd';
 import Module from '../../../../../modules/Module';
 import Axios from 'axios';
+import Cookies from 'js-cookie';
 import { fetchAPIMenu } from '../Create/request';
 
 const { Title } = Typography;
@@ -45,7 +46,7 @@ const apiUpdateMenu = (id, data) => {
             method: "PUT",
             url: `${process.env.REACT_APP_API_ENDPOINT}/api/menu/menuItem/${id}`,
             headers: {
-                Authorization : `Bearer ${window.localStorage.getItem("access_token")}`
+                Authorization : `Bearer ${Cookies.get("access_token")}`
             },
             data
         })

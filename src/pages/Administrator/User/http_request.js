@@ -1,5 +1,6 @@
 import React from 'react';
 import Axios from 'axios';
+import Cookies from 'js-cookie';
 
 export const getUserListAPI = (disable = false, query = "") => {
     return new Promise((resolve, reject) => {
@@ -18,7 +19,7 @@ export const getUserAPI = (id) => {
             method: "GET",
             url: `${process.env.REACT_APP_API_ENDPOINT}/api/users/${id}`,
             headers: {
-                Authorization: `Bearer ${window.localStorage.getItem("access_token")}`
+                Authorization: `Bearer ${Cookies.get("access_token")}`
             }
         })
         .then(res => resolve(res))
@@ -33,7 +34,7 @@ export const createUserAPI = (data) => {
             url: `${process.env.REACT_APP_API_ENDPOINT}/api/users`,
             data,
             headers: {
-                Authorization: `Bearer ${window.localStorage.getItem("access_token")}`
+                Authorization: `Bearer ${Cookies.get("access_token")}`
             }
         })
         .then(res => resolve(res))
@@ -48,7 +49,7 @@ export const updateUserAPI = (id, data) => {
             url: `${process.env.REACT_APP_API_ENDPOINT}/api/users/${id}`,
             data,
             headers: {
-                Authorization: `Bearer ${window.localStorage.getItem("access_token")}`
+                Authorization: `Bearer ${Cookies.get("access_token")}`
             }
         })
         .then(res => resolve(res))
@@ -62,7 +63,7 @@ export const disableUserAPI = (id) => {
             method: "DELETE",
             url: `${process.env.REACT_APP_API_ENDPOINT}/api/users/disable/${id}`,
             headers: {
-                Authorization : `Bearer ${window.localStorage.getItem("access_token")}`
+                Authorization : `Bearer ${Cookies.get("access_token")}`
             }
         })
         .then(res => resolve(res))
@@ -76,7 +77,7 @@ export const deleteUserAPI = (id) => {
             method: "DELETE",
             url: `${process.env.REACT_APP_API_ENDPOINT}/api/users/delete/${id}`,
             headers: {
-                Authorization : `Bearer ${window.localStorage.getItem("access_token")}`
+                Authorization : `Bearer ${Cookies.get("access_token")}`
             }
         })
         .then(res => resolve(res))

@@ -1,5 +1,6 @@
 import React from 'react';
 import Axios from 'axios';
+import Cookies from 'js-cookie';
 
 export const FetchNavigationBuilt = () => {
     return new Promise((resolve, reject) => {
@@ -40,7 +41,7 @@ export const disableMenu = (id) => {
             method: "DELETE",
             url: `${process.env.REACT_APP_API_ENDPOINT}/api/menu/menuItem/disable/${id}`,
             headers: {
-                Authorization: `Bearer ${window.localStorage.getItem("access_token")}`
+                Authorization: `Bearer ${Cookies.get("access_token")}`
             }
         })
         .then(res => resolve(res.data))
@@ -54,7 +55,7 @@ export const deleteMenu = (id) => {
             method: "DELETE",
             url: `${process.env.REACT_APP_API_ENDPOINT}/api/menu/menuItem/delete/${id}`,
             headers: {
-                Authorization: `Bearer ${window.localStorage.getItem("access_token")}`
+                Authorization: `Bearer ${Cookies.get("access_token")}`
             }
         })
         .then(res => resolve(res.data))
@@ -68,7 +69,7 @@ export const disableSubmenu = (id) => {
             method: "DELETE",
             url: `${process.env.REACT_APP_API_ENDPOINT}/api/menu/subMenu/disable/${id}`,
             headers: {
-                Authorization: `Bearer ${window.localStorage.getItem("access_token")}`
+                Authorization: `Bearer ${Cookies.get("access_token")}`
             }
         })
         .then(res => resolve(res.data))
@@ -82,7 +83,7 @@ export const deleteSubmenu = (id) => {
             method: "DELETE",
             url: `${process.env.REACT_APP_API_ENDPOINT}/api/menu/subMenu/delete/${id}`,
             headers: {
-                Authorization: `Bearer ${window.localStorage.getItem("access_token")}`
+                Authorization: `Bearer ${Cookies.get("access_token")}`
             }
         })
         .then(res => resolve(res.data))

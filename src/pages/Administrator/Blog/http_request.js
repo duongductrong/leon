@@ -1,5 +1,6 @@
 import React from 'react';
 import Axios from 'axios';
+import Cookies from 'js-cookie';
 
 export const uploadImageCB = (file) => {
     return new Promise((resolve, reject) => {
@@ -7,7 +8,7 @@ export const uploadImageCB = (file) => {
             method: "POST",
             url: `${process.env.REACT_APP_API_ENDPOINT}/api/uploads/singleFile`,
             headers: {
-                Authorization : `Bearer ${window.localStorage.getItem("access_token")}`
+                Authorization : `Bearer ${Cookies.get("access_token")}`
             },
             data: {
                 image: file
@@ -25,7 +26,7 @@ export const uploadImageCallBack = (file) => {
       (resolve, reject) => {
         const xhr = new XMLHttpRequest();
         xhr.open('POST', `${process.env.REACT_APP_API_ENDPOINT}/api/uploads/singleFile`);
-        xhr.setRequestHeader('Authorization', `Bearer ${localStorage.getItem("access_token")}`);
+        xhr.setRequestHeader('Authorization', `Bearer ${Cookies.get("access_token")}`);
         const data = new FormData();
         data.append('image', file);
         xhr.send(data);
@@ -49,7 +50,7 @@ export const restoreBlogAPI = (id) => {
             method: "DELETE",
             url: `${process.env.REACT_APP_API_ENDPOINT}/api/blog/disable/${id}`,
             headers: {
-                Authorization: `Bearer ${localStorage.getItem("access_token")}`
+                Authorization: `Bearer ${Cookies.get("access_token")}`
             }
         })
         .then(res => resolve(res.data))
@@ -85,7 +86,7 @@ export const createBlogAPI = (data = {}) => {
             method: "POST",
             url: `${process.env.REACT_APP_API_ENDPOINT}/api/blog`,
             headers: {
-                Authorization: `Bearer ${window.localStorage.getItem("access_token")}`
+                Authorization: `Bearer ${Cookies.get("access_token")}`
             },
             data
         })
@@ -100,7 +101,7 @@ export const updateBlogAPI = (id, data = {}) => {
             method: "PUT",
             url: `${process.env.REACT_APP_API_ENDPOINT}/api/blog/${id}`,
             headers: {
-                Authorization: `Bearer ${window.localStorage.getItem("access_token")}`
+                Authorization: `Bearer ${Cookies.get("access_token")}`
             },
             data
         })
@@ -115,7 +116,7 @@ export const deleteBlogAPI = (id) => {
             method :"DELETE",
             url: `${process.env.REACT_APP_API_ENDPOINT}/api/blog/delete/${id}`,
             headers: {
-                Authorization: `Bearer ${window.localStorage.getItem("access_token")}`
+                Authorization: `Bearer ${Cookies.get("access_token")}`
             }
         })
         .then(res => resolve(res))
@@ -129,7 +130,7 @@ export const disableBlogAPI = (id) => {
             method :"DELETE",
             url: `${process.env.REACT_APP_API_ENDPOINT}/api/blog/disable/${id}`,
             headers: {
-                Authorization: `Bearer ${window.localStorage.getItem("access_token")}`
+                Authorization: `Bearer ${Cookies.get("access_token")}`
             }
         })
         .then(res => resolve(res))

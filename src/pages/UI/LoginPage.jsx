@@ -1,12 +1,13 @@
 import React from 'react';
+import Axios from 'axios';
+import Cookies from 'js-cookie'
+import { Redirect } from 'react-router-dom';
 import UserInterface from '../../components/layouts/commons/UserInterface';
 import Label from '../../components/UI/Label/Label';
 import InputUI from '../../components/UI/Input/Input';
 import ButtonUI from '../../components/UI/Button/Button';
 import { Checkbox, message } from 'antd';
-import Axios from 'axios';
 import Module from '../../modules/Module';
-import { Redirect } from 'react-router-dom';
 
 const login = (url, data) => {
     return new Promise((resolve, reject) => {
@@ -22,7 +23,7 @@ const checkLoginAPI = () => {
             method: "GET",
             url: `${process.env.REACT_APP_API_ENDPOINT}/api/users/user_authorization`,
             headers: {
-                Authorization: `Bearer ${window.localStorage.getItem("access_token")}`
+                Authorization: `Bearer ${Cookies.get("access_token")}`
             }
         })
         .then(res => resolve(res.data))
@@ -46,7 +47,7 @@ class LoginPage extends React.Component {
     }
 
     checkLogin = () => {
-        if(localStorage.getItem("access_token")) {
+        if(Cookies.get("access_token")) {
             checkLoginAPI()
             .then(data => {
                 if(data.status === "auth" && data["user"].permission === "admin") 
@@ -81,7 +82,7 @@ class LoginPage extends React.Component {
                     //notice
                     notice
                     .then(() => message.success(data["msgVi"] + " - sắp chuyển hướng"), 0.2)
-                    .then(() => window.localStorage.setItem("access_token", data["token"])) //save access token on localStorage
+                    .then(() => Cookies.set("access_token", data.token, { expires: Module.newExpires(60) }))
                     .then(() => Module.Redirect("/administrator")) //redirect administrator
                 }
             })

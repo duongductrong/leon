@@ -1,6 +1,7 @@
 import React from 'react';
 import { Route, Redirect } from 'react-router-dom';
 import Axios from 'axios';
+import Cookies from 'js-cookie';
 import Module from '../modules/Module';
 
 const checkAuth = () => {
@@ -9,7 +10,7 @@ const checkAuth = () => {
             method: "GET",
             url: `${process.env.REACT_APP_API_ENDPOINT}/api/users/user_authorization`,
             headers: {
-                Authorization: `Bearer ${window.localStorage.getItem("access_token")}`
+                Authorization: `Bearer ${Cookies.get("access_token")}`
             }
         })
         .then(res => resolve(res))

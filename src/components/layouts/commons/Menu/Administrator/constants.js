@@ -1,11 +1,23 @@
 import React from 'react';
+import {
+    HomeOutlined, 
+    BarsOutlined,
+    BookOutlined,
+    UserOutlined,
+    TagsOutlined,
+    ContactsOutlined,
+    FormOutlined,
+    UnorderedListOutlined,
+    CopyrightOutlined,
+    LogoutOutlined
+} from '@ant-design/icons'
 
 export const SiderMenu = [
     {
         id: "yourwebsite", 
         kind: "default", 
         name: "Your Website", 
-        icon: "home", 
+        icon: <HomeOutlined />, 
         url: "/" ,
         submenu: [] 
     },
@@ -13,7 +25,7 @@ export const SiderMenu = [
         id: "dashboard", 
         kind: "default", 
         name: "Dashboard", 
-        icon: "bars" , 
+        icon: <BarsOutlined /> , 
         url: null , 
         submenu: [
             {
@@ -30,7 +42,7 @@ export const SiderMenu = [
         id: "yourblog", 
         kind: "blog", 
         name: "Your Blog", 
-        icon: "book" , 
+        icon: <BookOutlined /> , 
         url: null , 
         submenu: [
             {
@@ -51,7 +63,7 @@ export const SiderMenu = [
         id: "users", 
         kind: "blog", 
         name: "Users", 
-        icon: "user" , 
+        icon: <UserOutlined /> , 
         url: null , 
         submenu: [
             {
@@ -72,7 +84,7 @@ export const SiderMenu = [
         id: "category", 
         kind: "blog", 
         name: "Category", 
-        icon: "tags" , 
+        icon: <TagsOutlined /> , 
         url: null , 
         submenu: [
             {
@@ -93,7 +105,7 @@ export const SiderMenu = [
         id: "contact", 
         kind: "blog", 
         name: "Contact", 
-        icon: "contacts" , 
+        icon: <ContactsOutlined /> , 
         url: null , 
         submenu: [
             {
@@ -110,7 +122,7 @@ export const SiderMenu = [
         id: "comments", 
         kind: "blog", 
         name: "Comments", 
-        icon: "form" , 
+        icon: <FormOutlined /> , 
         url: null , 
         submenu: [
             {
@@ -127,7 +139,7 @@ export const SiderMenu = [
         id: "menu", 
         kind: "system", 
         name: "Menu", 
-        icon: "unordered-list", 
+        icon: <UnorderedListOutlined />, 
         url: null, 
         submenu: [
             {
@@ -140,7 +152,7 @@ export const SiderMenu = [
         id: "license", 
         kind: "system", 
         name: "License", 
-        icon: "copyright" , 
+        icon: <CopyrightOutlined /> , 
         url: null , 
         submenu: [
             {
@@ -153,7 +165,7 @@ export const SiderMenu = [
         id: "logout", 
         kind: "blog", 
         name: "Logout", 
-        icon: "logout", 
+        icon: <LogoutOutlined />, 
         url: null, 
         submenu: [], onFunc: () => {
             window.localStorage.removeItem("access_token")

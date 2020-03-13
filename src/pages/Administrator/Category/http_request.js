@@ -1,5 +1,6 @@
 import React from 'react';
 import Axios from 'axios';
+import Cookies from 'js-cookie';
 
 export const getCategoriesAPI = async (disable, query) => {
     return new Promise((resolve, reject) => {
@@ -30,7 +31,7 @@ export const createCategoryAPI = (data) => {
             url: `${process.env.REACT_APP_API_ENDPOINT}/api/categories`,
             data: data,
             headers: {
-                Authorization: `Bearer ${window.localStorage.getItem("access_token")}`
+                Authorization: `Bearer ${Cookies.get("access_token")}`
             }
         })
         .then(res => resolve(res))
@@ -45,7 +46,7 @@ export const updateCategoryAPI = (id, data) => {
             url: `${process.env.REACT_APP_API_ENDPOINT}/api/categories/${id}`,
             data: data,
             headers: {
-                Authorization : `Bearer ${window.localStorage.getItem("access_token")}`
+                Authorization : `Bearer ${Cookies.get("access_token")}`
             }
         })
         .then(res => resolve(res))
@@ -59,7 +60,7 @@ export const deleteCategoryAPI = (id) => {
             method: "DELETE",
             url: `${process.env.REACT_APP_API_ENDPOINT}/api/categories/delete/${id}`,
             headers: {
-                Authorization : `Bearer ${window.localStorage.getItem("access_token")}`
+                Authorization : `Bearer ${Cookies.get("access_token")}`
             }
         })
         .then(res => resolve(res))
@@ -73,7 +74,7 @@ export const disableCategoryAPI = (id) => {
             method: "DELETE",
             url: `${process.env.REACT_APP_API_ENDPOINT}/api/categories/disable/${id}`,
             headers: {
-                Authorization : `Bearer ${window.localStorage.getItem("access_token")}`
+                Authorization : `Bearer ${Cookies.get("access_token")}`
             }
         })
         .then(res => resolve(res))

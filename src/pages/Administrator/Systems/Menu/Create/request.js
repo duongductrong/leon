@@ -1,5 +1,6 @@
 import React from 'react';
 import Axios from 'axios';
+import Cookies from 'js-cookie';
 
 export const createNav = (data = {}) => {
     return new Promise((resolve, reject) => {
@@ -7,7 +8,7 @@ export const createNav = (data = {}) => {
             method: "POST",
             url: `${process.env.REACT_APP_API_ENDPOINT}/api/menu/menuItem`,
             headers: {
-                Authorization: `Bearer ${window.localStorage.getItem("access_token")}`
+                Authorization: `Bearer ${Cookies.get("access_token")}`
             },
             data
         })
@@ -22,7 +23,7 @@ export const createSubmenu = (data = {}) => {
             method: "POST",
             url: `${process.env.REACT_APP_API_ENDPOINT}/api/menu/subMenu`,
             headers: {
-                Authorization: `Bearer ${window.localStorage.getItem("access_token")}`
+                Authorization: `Bearer ${Cookies.get("access_token")}`
             },
             data
         })
@@ -59,7 +60,7 @@ export const postApiCreateSubmenu = data => {
             method: "POST",
             url: `${process.env.REACT_APP_API_ENDPOINT}/api/menu/submenu`,
             headers: {
-                Authorization: `Bearer ${window.localStorage.getItem("access_token")}`
+                Authorization: `Bearer ${Cookies.get("access_token")}`
             },
             data
         })
@@ -74,7 +75,7 @@ export const putApiCreateSubmenu = (id, data) => {
             method: "PUT",
             url: `${process.env.REACT_APP_API_ENDPOINT}/api/menu/submenu/${id}`,
             headers: {
-                Authorization: `Bearer ${window.localStorage.getItem("access_token")}`
+                Authorization: `Bearer ${Cookies.get("access_token")}`
             },
             data
         })

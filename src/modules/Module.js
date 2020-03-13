@@ -118,6 +118,10 @@ const Module = {
                 return false;
         }
         return true;
+    },
+    newExpires: (minutes = 60) => {
+        //Default minutes = 60 minutes
+        return new Date(new Date().getTime() + minutes * 60 * 1000);
     }
 }
 
