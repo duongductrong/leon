@@ -1,23 +1,12 @@
 import React from 'react';
-import {
-    HomeOutlined, 
-    BarsOutlined,
-    BookOutlined,
-    UserOutlined,
-    TagsOutlined,
-    ContactsOutlined,
-    FormOutlined,
-    UnorderedListOutlined,
-    CopyrightOutlined,
-    LogoutOutlined
-} from '@ant-design/icons'
+import Cookies from 'js-cookie';
 
 export const SiderMenu = [
     {
         id: "yourwebsite", 
         kind: "default", 
         name: "Your Website", 
-        icon: <HomeOutlined />, 
+        icon: "home", 
         url: "/" ,
         submenu: [] 
     },
@@ -25,7 +14,7 @@ export const SiderMenu = [
         id: "dashboard", 
         kind: "default", 
         name: "Dashboard", 
-        icon: <BarsOutlined /> , 
+        icon: "bars" , 
         url: null , 
         submenu: [
             {
@@ -42,7 +31,7 @@ export const SiderMenu = [
         id: "yourblog", 
         kind: "blog", 
         name: "Your Blog", 
-        icon: <BookOutlined /> , 
+        icon: "book" , 
         url: null , 
         submenu: [
             {
@@ -63,7 +52,7 @@ export const SiderMenu = [
         id: "users", 
         kind: "blog", 
         name: "Users", 
-        icon: <UserOutlined /> , 
+        icon: "user" , 
         url: null , 
         submenu: [
             {
@@ -84,7 +73,7 @@ export const SiderMenu = [
         id: "category", 
         kind: "blog", 
         name: "Category", 
-        icon: <TagsOutlined /> , 
+        icon: "tags" , 
         url: null , 
         submenu: [
             {
@@ -105,7 +94,7 @@ export const SiderMenu = [
         id: "contact", 
         kind: "blog", 
         name: "Contact", 
-        icon: <ContactsOutlined /> , 
+        icon: "contacts" , 
         url: null , 
         submenu: [
             {
@@ -122,7 +111,7 @@ export const SiderMenu = [
         id: "comments", 
         kind: "blog", 
         name: "Comments", 
-        icon: <FormOutlined /> , 
+        icon: "form" , 
         url: null , 
         submenu: [
             {
@@ -139,7 +128,7 @@ export const SiderMenu = [
         id: "menu", 
         kind: "system", 
         name: "Menu", 
-        icon: <UnorderedListOutlined />, 
+        icon: "unordered-list", 
         url: null, 
         submenu: [
             {
@@ -152,7 +141,7 @@ export const SiderMenu = [
         id: "license", 
         kind: "system", 
         name: "License", 
-        icon: <CopyrightOutlined /> , 
+        icon: "copyright" , 
         url: null , 
         submenu: [
             {
@@ -165,10 +154,10 @@ export const SiderMenu = [
         id: "logout", 
         kind: "blog", 
         name: "Logout", 
-        icon: <LogoutOutlined />, 
+        icon: "logout", 
         url: null, 
         submenu: [], onFunc: () => {
-            window.localStorage.removeItem("access_token")
+            Cookies.remove("access_token")
             window.location.reload()
         } 
     }
