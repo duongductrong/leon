@@ -1,4 +1,5 @@
 import React from 'react';
+import Cookies from 'js-cookie';
 import Axios from 'axios';
 
 export const fetchImages = async (url) => {
@@ -18,7 +19,7 @@ export const deleteImageAPI = async (id) => {
             method: "DELETE",
             url: `${process.env.REACT_APP_API_ENDPOINT}/api/uploads/deleteSingle`,
             headers: {
-                Authorization: `Bearer ${window.localStorage.getItem("access_token")}`
+                Authorization: `Bearer ${Cookies.get("access_token")}`
             },
             data: {
                 public_id: id
