@@ -46,7 +46,7 @@ class ProfileImage extends React.Component {
                     <img src={image} className="profile-image__avatar__child" />
                 </div>
                 <h1 className="profile-image__introduction profile-image--bigSize">Hi.</h1>
-                <h2 className="profile-image__present profile-image--normalSize">Hey, Bro !</h2>
+                <h2 className="profile-image__present profile-image--normalSize">Thanks for watch</h2>
                 <h2 className="profile-image__present profile-image--normalSize">
                     {/* I am a  */}
                     { this.presentMySkill.map((mySkil, i) => (
