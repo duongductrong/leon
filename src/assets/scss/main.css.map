@@ -29,7 +29,7 @@
         "Components/_relation-posts.scss",
         "Components/_textarea.scss",
         "Components/_label.scss",
-        "Components/_comments.scss",
+        "Components/_comment-form.scss",
         "Components/_card-full-details.scss",
         "Components/_library-images.scss",
         "Components/_animation-switch.scss",
