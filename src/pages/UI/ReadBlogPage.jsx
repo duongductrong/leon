@@ -8,7 +8,7 @@ import SkeletonSquare from '../../components/UI/Skeleton/SkeletonSquare';
 import NavSingle from '../../components/UI/NavSingle/NavSingple';
 import AboutAuthor from '../../components/UI/AboutAuthor/AboutAuthor';
 import RelationPosts from '../../components/UI/RelationPosts/RelationPosts';
-import Comments from '../../components/UI/Comments/Comments';
+import CommentForm from '../../components/UI/Comment/CommentForm';
 import Module from '../../modules/Module';
 
 //assets
@@ -137,7 +137,7 @@ class ReadBlogPage extends React.Component {
                         <NavSingle style={{marginBottom: "40px"}} nextPost={{title: "Updating", url: "/"}} prevPost={{title: "Updating", url: "/"}} />
                         <AboutAuthor image={Avt} style={{marginBottom: "40px"}} name="CodeEN" description="Hello. I am a student of Ton Duc Thang Univerisy - College School. Currently, I am a sophomore, pursuing a programming industry. The language I use is javascript." />
                         <RelationPosts title="YOU MAY ALSO LIKE" style={{marginBottom: "40px"}} posts={relate_blog.slice(0,3)} />
-                        <Comments title="LEAVE A COMMENT" style={{marginBottom: "40px"}} />
+                        <CommentForm title="LEAVE A COMMENT" style={{marginBottom: "40px"}} />
                     </LayoutMedium>
                 </div>
             // </UserInterface>
