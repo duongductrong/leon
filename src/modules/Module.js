@@ -88,13 +88,18 @@ const Module = {
         return newNumb.reverse().join("")
     },
     DateBeautiful: (str) => {
-        str = str.split("T");
-        str = str[0].split("-").reverse().join("-");
+        let now = new Date(str);
+        let date, time;
+        date = str.split("T")[0];
+        date = date.split("-").reverse().join("-");
+        time = `${now.getHours()}:${now.getMinutes()}:${now.getSeconds()}`;
+        
         return {
-            date: str,
-            getDay: str.split("-")[0],
-            getMonth: str.split("-")[1],
-            getYears: str.split("-")[2]
+            date: date,
+            getDay: date.split("-")[0],
+            getMonth: date.split("-")[1],
+            getYears: date.split("-")[2],
+            time: time,
         };
     },
 
