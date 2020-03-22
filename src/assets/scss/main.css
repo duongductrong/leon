@@ -1215,7 +1215,7 @@ ol, ul, dl {
   font-size: 14px;
 }
 
-.comments--grid3 {
+.comment-form--grid3 {
   display: grid;
   display: -moz-grid;
   display: -ms-grid;
@@ -1224,8 +1224,16 @@ ol, ul, dl {
   grid-gap: 15px;
 }
 
+.comment-form--commentLists {
+  margin-bottom: 60px;
+}
+
+.comment-form--errors {
+  color: red;
+}
+
 @media (max-width: 425px) {
-  .comments--grid3 {
+  .comment-form--grid3 {
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
   }

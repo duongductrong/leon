@@ -1,4 +1,4 @@
-.comments {
+.comment-form {
     &__group {
 
     }
@@ -11,10 +11,16 @@
         grid-template-columns: repeat(3, 1fr);
         grid-gap: 15px;
     }
+    &--commentLists {
+        margin-bottom: 60px;
+    }
+    &--errors {
+        color: red;
+    }
 }
 
 @include MobileL {
-    .comments {
+    .comment-form {
         &__group {
     
         }
