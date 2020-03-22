@@ -160,7 +160,7 @@ class CommentForm extends React.Component {
                             { errors["website"] && <small className="comment-form--errors"> {errors["website"].msgVi} </small> }
                         </div>
                     </div>
-                    <Button type="submit" style={{marginTop: "30px"}}> {loading? "SUBMITING" : "POST COMMENT"} </Button>
+                    <Button type="submit" style={{marginTop: "30px"}} disabled={loading}> {loading? "SUBMITING" : "POST COMMENT"} </Button>
                 </form>
             </>
         )
