@@ -78,7 +78,7 @@ class ReadBlogPage extends React.Component {
         })
     }
 
-    componentWillMount() {
+    UNSAFE_componentWillMount() {
         //Top top after did mount 
         this.onToTopAfterLoaded();
         //get data and show

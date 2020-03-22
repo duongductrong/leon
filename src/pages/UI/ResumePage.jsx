@@ -84,7 +84,7 @@ class ResumePage extends React.Component {
         window.scrollTo({top: 0, left: 0, behavior: "smooth" });
     }
 
-    componentWillMount() {
+    UNSAFE_componentWillMount() {
         this.onLoadedToTop();
     }
 

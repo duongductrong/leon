@@ -90,7 +90,7 @@ export default class RestoreBlogPage extends React.Component {
         this.fetchData({page: paper.current})
     }
 
-    componentWillMount() {
+    UNSAFE_componentWillMount() {
         this.fetchData();
     }
 

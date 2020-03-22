@@ -77,7 +77,7 @@ class BlogPage extends React.Component {
         this.getBlogs(page);
     }
 
-    componentWillMount() {
+    UNSAFE_componentWillMount() {
         this.getBlogs()
     }
 

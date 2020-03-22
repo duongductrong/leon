@@ -91,7 +91,7 @@ export default class RestoreCategoriesPage extends React.Component {
         this.fetchCategories({page: temp.current})
     }
 
-    componentWillMount() {
+    UNSAFE_componentWillMount() {
         //Before mount JSX, sent request get data categories
         this.fetchCategories();
     }

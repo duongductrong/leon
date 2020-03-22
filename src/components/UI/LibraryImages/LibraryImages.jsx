@@ -110,7 +110,7 @@ class LibraryImages extends React.Component {
         }
     }
 
-    componentWillMount() {
+    UNSAFE_componentWillMount() {
         this.getImage();
     }
 

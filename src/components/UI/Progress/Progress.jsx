@@ -14,7 +14,7 @@ class Progress extends React.Component {
         document.styleSheets[0].insertRule(`@keyframes progressIn {from {width: 0 } to{width: ${progress}}}`)
     }
 
-    componentWillMount() {
+    UNSAFE_componentWillMount() {
         this.onSetKeyFramesAnimation(this.props.progress);
     }
 

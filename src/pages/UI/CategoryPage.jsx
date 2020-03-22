@@ -79,7 +79,7 @@ class CategoryPage extends React.Component {
         this.getBlogsOfCategory(page)
     }
 
-    componentWillMount() {
+    UNSAFE_componentWillMount() {
         this.getBlogsOfCategory()
     }
 

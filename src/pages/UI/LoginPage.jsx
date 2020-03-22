@@ -92,7 +92,7 @@ class LoginPage extends React.Component {
         })
     }
 
-    componentWillMount() {
+    UNSAFE_componentWillMount() {
         this.onToTopAfterLoaded();
         this.checkLogin();
     }

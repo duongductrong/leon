@@ -91,7 +91,7 @@ export default class RestoreUsersPage extends React.Component {
         this.fetchUsersList({page: temp.current})
     }
 
-    componentWillMount() {
+    UNSAFE_componentWillMount() {
         //Before mount JSX, sent request get data users
         this.fetchUsersList();
     }

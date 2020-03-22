@@ -26,7 +26,7 @@ class PrivateRoute extends React.Component {
         }
     }
 
-    componentWillMount() {
+    UNSAFE_componentWillMount() {
         checkAuth()
         .then(res => {
             const { data } = res;
