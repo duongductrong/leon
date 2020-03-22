@@ -137,7 +137,7 @@ class ReadBlogPage extends React.Component {
                         <NavSingle style={{marginBottom: "40px"}} nextPost={{title: "Updating", url: "/"}} prevPost={{title: "Updating", url: "/"}} />
                         <AboutAuthor image={Avt} style={{marginBottom: "40px"}} name="CodeEN" description="Hello. I am a student of Ton Duc Thang Univerisy - College School. Currently, I am a sophomore, pursuing a programming industry. The language I use is javascript." />
                         <RelationPosts title="YOU MAY ALSO LIKE" style={{marginBottom: "40px"}} posts={relate_blog.slice(0,3)} />
-                        <CommentForm title="LEAVE A COMMENT" style={{marginBottom: "40px"}} />
+                        {blog._id && <CommentForm title="LEAVE A COMMENT" style={{marginBottom: "40px"}} postId={blog._id} />}
                     </LayoutMedium>
                 </div>
             // </UserInterface>
