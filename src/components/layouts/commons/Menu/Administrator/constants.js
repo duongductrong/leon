@@ -116,11 +116,11 @@ export const SiderMenu = [
         submenu: [
             {
                 name: "View", 
-                url: "/administrator"
+                url: "/administrator/comment"
             },
             {
                 name: "Create", 
-                url: "/administrator"
+                url: "/administrator/comment/new"
             }
         ] 
     },
