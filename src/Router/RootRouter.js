@@ -34,6 +34,7 @@ import RestoreBlogPage from '../pages/Administrator/Blog/Restore/RestoreBlogPage
 import RestoreCategoriesPage from '../pages/Administrator/Category/Restore/RestoreCategoriesPage';
 import RestoreUserPage from '../pages/Administrator/User/Restore/RestoreUserPage';
 import CountWordExtension from '../pages/UI/CountWordExtension';
+import FetchCommentPage from '../pages/Administrator/Comment/FetchView/FetchCommentPage';
 
 // we need to map the `scale` prop we define below
 // to the transform style property
@@ -100,6 +101,7 @@ class BlogRouter extends React.Component {
                     <PrivateRoute path={`/administrator/user/new`} exact component={CreateUserPage} />
                     <PrivateRoute path={`/administrator/user/edit/:id`} exact component={EditUserPage} />
                     <PrivateRoute path={`/administrator/user/restore`} exact component={RestoreUserPage} />
+                    <PrivateRoute path={`/administrator/comment`} exact component={FetchCommentPage} />
                     <PrivateRoute path={`/administrator/system/menu`} exact component={MenuSystem} />
                     <Route path={`*`} component={Error404} />
                 </AnimatedSwitch>
