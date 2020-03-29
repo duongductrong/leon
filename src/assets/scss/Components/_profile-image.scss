@@ -33,18 +33,19 @@
         font-size: 170px;
     }
     &--normalSize {
-        font-size: 45px;
+        font-size: 40px;
         margin: 0;
     }
     &--boldStyle {
         font-weight: bold;
+        text-transform: uppercase;
     }
 }
 
 @keyframes effectModifySkill {
     from {
         opacity: 0;
-        transform: translateY(50px) skewY(20deg);
+        transform: translateY(50px);
         text-shadow: 5px -5px $dark;
     }
     to {
