@@ -1,13 +1,15 @@
 import React from 'react';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import { faHeart } from '@fortawesome/free-solid-svg-icons';
 
 class ProfileImage extends React.Component {
     constructor(props) {
         super(props);
-        
+
         this.presentMySkill = [
-            "Coder",
-            "Blogger",
-            "Welcome !!!"
+            "Hello",
+            "Welcome to",
+            `My blog`
         ];
 
         this.initLoop = null;
@@ -40,13 +42,15 @@ class ProfileImage extends React.Component {
         const { image } = this.props;
         const { skill } = this.state;
 
+        let heart = <FontAwesomeIcon icon={faHeart} style={{color: "red"}} />
+
         return (
             <div className="profile-image">
                 <div className="profile-image__avatar">
                     <img src={image} className="profile-image__avatar__child" />
                 </div>
                 <h1 className="profile-image__introduction profile-image--bigSize">Hi.</h1>
-                <h2 className="profile-image__present profile-image--normalSize">Thanks for watch</h2>
+                <h2 className="profile-image__present profile-image--normalSize"> {heart} </h2>
                 <h2 className="profile-image__present profile-image--normalSize">
                     {/* I am a  */}
                     { this.presentMySkill.map((mySkil, i) => (
