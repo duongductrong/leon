@@ -18,11 +18,7 @@ export const SiderMenu = [
         url: null , 
         submenu: [
             {
-                name: "View", 
-                url: "/administrator"
-            },
-            {
-                name: "Create", 
+                name: "Analytics", 
                 url: "/administrator"
             }
         ] 
