@@ -13,16 +13,16 @@ import React from 'react';
 // }
 
 export const SimpleModule = {
-    goTo: function(page, title, url) {
-        if("undefinded" !== typeof window.history.pushState) {
-            window.history.pushState({page: page}, title, url);
+    goTo: function (page, title, url) {
+        if ("undefinded" !== typeof window.history.pushState) {
+            window.history.pushState({ page: page }, title, url);
         } else {
             window.location.assign(url);
         }
     },
-    isEmptyObj: function(obj) {
-        for(var key in obj) {
-            if(obj.hasOwnProperty(key))
+    isEmptyObj: function (obj) {
+        for (var key in obj) {
+            if (obj.hasOwnProperty(key))
                 return false;
         }
         return true;

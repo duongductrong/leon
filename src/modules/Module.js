@@ -5,7 +5,7 @@ import Axios from 'axios';
 
 const Module = {
     ConvertURL: (str) => {
-        if(!str) {
+        if (!str) {
             str = ""
         }
         str = str.replace(/à|á|ạ|ả|ã|â|ầ|ấ|ậ|ẩ|ẫ|ă|ằ|ắ|ặ|ẳ|ẵ/g, "a");
@@ -68,20 +68,20 @@ const Module = {
     AddCommaToNumber: (numb) => {
         let counter = 0;
         let newNumb = [];
-        numb = 
-        Math.round(numb) //Làm tròn số
-        .toString() //Chuyển về dạng string
-        .split("") // Phân tách thành mảng
+        numb =
+            Math.round(numb) //Làm tròn số
+                .toString() //Chuyển về dạng string
+                .split("") // Phân tách thành mảng
 
         //Xử lý thêm dấu .
-        for(let i = numb.length - 1; i >= 0; i--) {
+        for (let i = numb.length - 1; i >= 0; i--) {
             counter++;
             newNumb.push(numb[i]);
-            if(counter === 3 && numb[i - 1] !== undefined) {
-            newNumb.push(".");
-            newNumb.push(numb[i-1]);
-            i = i - 1;
-            counter = 1;
+            if (counter === 3 && numb[i - 1] !== undefined) {
+                newNumb.push(".");
+                newNumb.push(numb[i - 1]);
+                i = i - 1;
+                counter = 1;
             }
         }
         //Chuyển từ mảng lại chuỗi
@@ -93,7 +93,7 @@ const Module = {
         date = str.split("T")[0];
         date = date.split("-").reverse().join("-");
         time = `${now.getHours()}:${now.getMinutes()}:${now.getSeconds()}`;
-        
+
         return {
             date: date,
             getDay: date.split("-")[0],
@@ -110,16 +110,16 @@ const Module = {
         tagA.click();
         document.body.removeChild(tagA);
     },
-    goTo: function(page, title, url) {
-        if("undefinded" !== typeof window.history.pushState) {
-            window.history.pushState({page: page}, title, url);
+    goTo: function (page, title, url) {
+        if ("undefinded" !== typeof window.history.pushState) {
+            window.history.pushState({ page: page }, title, url);
         } else {
             window.location.assign(url);
         }
     },
-    isEmptyObj: function(obj) {
-        for(var key in obj) {
-            if(obj.hasOwnProperty(key))
+    isEmptyObj: function (obj) {
+        for (var key in obj) {
+            if (obj.hasOwnProperty(key))
                 return false;
         }
         return true;
