@@ -1,5 +1,5 @@
 import React from 'react';
-import { Form, Input, Row, Col, Upload, Icon, Button, message, notification } from 'antd';
+import { Form, Input, Button, message, notification } from 'antd';
 import LibraryImages from '../../../../components/UI/LibraryImages/LibraryImages';
 import Module from '../../../../modules/Module';
 import { createCategoryAPI } from '../http_request';
