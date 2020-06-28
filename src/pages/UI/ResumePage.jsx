@@ -85,11 +85,13 @@ class ResumePage extends React.Component {
                                 </Testimonial>
                             </SideResumeProgress>
                             <SideResumeProgress title="FRONTEND DEVELOPER SKILLS">
-                                <Progress title="HTML5" progress={100} />
-                                <Progress title="CSS3" progress={90} />
+                                <Progress title="HTML5" progress={90} />
+                                <Progress title="CSS3" progress={80} />
                                 <Progress title="JAVASCRIPT" progress={70} />
                                 <Progress title="SASS" progress={60} />
-                                <Progress title="REACTJS" progress={70} />
+                                <Progress title="ReactJS/Redux" progress={65} />
+                                <Progress title="VueJS/VueX" progress={50} />
+                                <Progress title="Angular" progress={50} />
                             </SideResumeProgress>
                             <SideResumeProgress title="BACKEND DEVELOPER SKILLS">
                                 <Progress title="NODEJS/EXPRESSJS" progress={70} />
